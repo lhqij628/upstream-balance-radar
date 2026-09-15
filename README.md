@@ -1,4 +1,8 @@
-# 上游余额雷达
+# Upstream Balance Radar
+
+Upstream Balance Radar is a self-hosted web and desktop tool for monitoring API relay channels, tracking balances, testing text and image models, and sending multi-level low-balance email alerts. It supports automatic polling, encrypted credentials, desktop-server synchronization, model discovery, and recharge links.
+
+## 项目简介
 
 React + Node/Express Web 控制台和 Tauri 桌面端，用于渠道余额、三级邮件预警、模型和文本/生图测试。
 
