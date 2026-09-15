@@ -1,0 +1,42 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
+  "productName": "上游余额雷达",
+  "version": "0.2.0",
+  "identifier": "com.codex.upstream-balance-radar-v2",
+  "build": {
+    "beforeDevCommand": "pnpm dev",
+    "devUrl": "http://localhost:5173",
+    "beforeBuildCommand": "pnpm build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "上游余额雷达",
+        "label": "main",
+        "width": 1220,
+        "height": 820,
+        "minWidth": 980,
+        "minHeight": 680,
+        "center": true,
+        "transparent": false,
+        "backgroundColor": "#070b12"
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: http:; connect-src ipc: http://ipc.localhost http://127.0.0.1:* http://localhost:* https:; object-src 'none'; base-uri 'self'; frame-src 'none'"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": [
+      "nsis"
+    ],
+    "icon": [
+      "icons/icon.ico"
+    ],
+    "resources": [
+      "resources/"
+    ]
+  }
+}

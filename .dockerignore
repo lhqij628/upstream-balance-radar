@@ -1,0 +1,14 @@
+node_modules
+src-tauri
+server/data
+server/data-rt
+server/data-*/*
+server/test-artifacts
+server/*test*
+server/*acceptance*
+.git
+.env*
+*.log
+*.png
+artifacts
+dist

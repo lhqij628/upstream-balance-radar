@@ -1,0 +1,50 @@
+{
+  "name": "upstream-balance-web",
+  "private": true,
+  "license": "MIT",
+  "version": "0.2.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc -b && vite build",
+    "server": "node server/index.mjs",
+    "start": "node server/index.mjs",
+    "local": "powershell -NoProfile -ExecutionPolicy Bypass -File .\\start-local.ps1",
+    "local:no-browser": "powershell -NoProfile -ExecutionPolicy Bypass -File .\\start-local.ps1 -OpenBrowser:$false",
+    "web:build": "tsc -b && vite build",
+    "web:start": "node server/index.mjs",
+    "preview": "vite preview",
+    "lint": "oxlint",
+    "desktop:prepare": "node scripts/prepare-desktop.mjs",
+    "desktop:build": "pnpm desktop:prepare && tauri build",
+    "test": "node --test server/*.test.mjs"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2.11.1",
+    "express": "4.22.2",
+    "nodemailer": "9.1.1",
+    "quickjs-emscripten": "^0.32.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "smol-toml": "^1.8.0",
+    "@tauri-apps/plugin-opener": "^2.5.3"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.11.4",
+    "@types/node": "^24.13.3",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "@vitejs/plugin-react": "^6.1.0",
+    "oxlint": "^1.79.0",
+    "typescript": "~6.0.2",
+    "vite": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=24.15.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "qs": "^6.16.0"
+    }
+  }
+}

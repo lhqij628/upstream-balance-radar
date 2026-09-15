@@ -1,0 +1,14 @@
+services:
+  radar:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8789:8789"
+    environment:
+      RADAR_ACCESS_TOKEN: ${RADAR_ACCESS_TOKEN:?Set a random password of at least 24 characters}
+      RADAR_PUBLIC_URL: ${RADAR_PUBLIC_URL}
+      RADAR_ALLOWED_ORIGINS: "http://tauri.localhost,tauri://localhost"
+    volumes:
+      - radar-data:/data
+volumes:
+  radar-data:
